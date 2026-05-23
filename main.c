@@ -18,6 +18,7 @@ int main (int argc, char **argv) {
     fread(rom, 1, fileSize, f);
 
     // Prints title bytes 
+    printf("Title:\t");
     for (int i = 0x0134; i <= 0x0143; i++) {
         if (rom[i] == '\0') break;
         printf("%c", rom[i]);
@@ -25,10 +26,13 @@ int main (int argc, char **argv) {
     printf("\n");
 
     // Decodes and prints cartridge type
-    printf("%s\n", get_cart_type(rom[0x0147]));
+    printf("Cartridge Type:\t%s\n", get_cart_type(rom[0x0147]));
 
     // Decodes and prints ROM size
-    printf("%d\n", get_rom_size(rom[0x0148]));
+    printf("Rom Size:\t%u KB\n", get_rom_size(rom[0x0148]) / 1024);
+
+    // Prints checksum value
+    printf("Checksum Val:\t0x%02X\n", rom[0x014D]);
 
     fclose(f);
 
