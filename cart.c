@@ -5,7 +5,7 @@
  * Function:	get_cart_type(type)
  *
  * Purpose:	Returns string representing the cartridge type, based
- *		on input cartridge type byte (as found in rom header)
+ *		    on input cartridge type byte (as found in rom header)
  * 
  * Parameters:	type	-- Byte representing cartridge type
  */
@@ -47,7 +47,7 @@ const char *get_cart_type(uint8_t type) {
  * Function:	get_rom_size(val)
  *
  * Purpose:	Returns how much ROM is present on cartridge
- *		based off of ROM size byte in header
+ *		    based off of ROM size byte in header
  * 
  * Parameters:	val	-- Byte representing ROM size byte (0x0148)
  */
