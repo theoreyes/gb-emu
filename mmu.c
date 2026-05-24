@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 #include <stdlib.h>
+#include "mmu.h"
+#include "cart.h"
 
 static uint8_t wram[0x2000];   // 8KiB Work Ram
 static uint8_t vram[0x2000];   // 8KiB Video Ram
@@ -72,7 +74,5 @@ void mmu_load_rom(const char *path) {
 
     // Prints checksum value
     printf("Checksum Val:\t0x%02X\n", rom[0x014D]);
-
-    fclose(f);
 
 }
