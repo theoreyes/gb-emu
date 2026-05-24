@@ -21,9 +21,9 @@ uint8_t read8(uint16_t addr) {
         case 0xC000 ... 0xCFFF: // 4  KiB WRAM 
             return wram[addr - 0xC000];
         case 0xD000 ... 0xDFFF: // 4  KiB WRAM (CGB mode: bank 1-7)
-            return wram[addr - 0xD000];
+            return wram[addr - 0xC000];
         case 0xE000 ... 0xFDFF: // Echo RAM, Mirror of C000-DDFF 
-            return 0; 
+            return wram[addr - 0xE000];
         case 0xFE00 ... 0xFE9F: // Object attribute memory (OAM)
             // TODO: Implement  
             return 0; 
