@@ -1,7 +1,7 @@
 C = gcc
 CFLAGS = -Wall -Wextra -g
 
-SRC = main.c cart.c mmu.c
+SRC = main.c cart.c mmu.c cpu.c
 OBJ = $(SRC:.c=.o)
 
 gb: $(OBJ)
